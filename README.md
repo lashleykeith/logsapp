@@ -6,9 +6,9 @@ This is a demonstration on how log you can use sql together with python to look 
 ## How to run it.
 
 ### What you need:
-..* Python
-..* Vagrant
-..* VirtualBox
+- Python
+- Vagrant
+- VirtualBox
 
 ## Setup requirements
 
