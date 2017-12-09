@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+# Udacity Full Stack Nanodegree Project: Logs Analysis
 import time
 import webbrowser
 import psycopg2
