@@ -11,7 +11,7 @@ now = datetime.datetime.now()
 
 
 input_variable = raw_input ("Enter your file name : ")
-print (  input_variable + ".txt" )
+print (input_variable + ".txt")
 
 input_song = raw_input ("enter your song : ")
 
@@ -27,7 +27,7 @@ QUESTIONS = [
 
 # Queries to be executed
 DATA = [
-    #1 Top articles
+    # 1 Top articles
     ('''
     SELECT articles.title, count(*) as num
     FROM articles inner join log on log.path
@@ -35,7 +35,7 @@ DATA = [
     where log.status like '%200%' group by
     articles.title, log.path order by num desc limit 3;
     '''),
-    #2 Top authors
+    # 2 Top authors
     ('''
     SELECT authors.name, count(*) as num from articles inner
     join authors on articles.author = authors.id inner join log
@@ -43,7 +43,7 @@ DATA = [
     log.status like '%200%' group by authors.name order by 
     num desc;
     '''),
-    #3 Day of errors
+    # 3 Day of errors
     ('''
     SELECT data.day, ROUND((100.0*data.err/data.total),2) 
     as error FROM (SELECT date_trunc('day', time) as day,
@@ -80,7 +80,8 @@ def formingquerynow(babyboy):
 def formingqueryagain(babyboy):
     resultsS = ''
     for pounds in babyboy:
-        resultsS += ("* {i[0]:%B'/'%d'/'%Y'/'} we encountered {i[1]:}% errors\n").format(i=pounds)
+        resultsS += ("* {i[0]:%B'/'%d'/'%Y'/'} we \
+        encountered {i[1]:}% errors\n").format(i=pounds)
     return resultsS
 
 
